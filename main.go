@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/baharoam/openaiIntegration/controllers"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-//	"github.com/baharoam/openaiIntegration/controllers"
+	// "github.com/baharoam/openaiIntegration/controllers"
 )
 
 func loadEnv() {
@@ -23,6 +24,7 @@ func main() {
 	//api_key := os.Getenv("OPENAI_API_KEY")
 
 	r := gin.Default()
+	r.POST("/process-laptop", controllers.ProcessLaptopSpec)
 	if err := r.Run(":8080"); err != nil {
 		log.Fatalf("Failed to run server: %v", err)
 	}
