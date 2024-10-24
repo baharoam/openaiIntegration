@@ -1,18 +1,18 @@
 
 ## Features
 
-- Reads raw laptop specification data from a file.
-- Interacts with the OpenAI GPT API to structure the data into a standardized format.
-- Caches processed laptop specs to improve performance.
+- Reads raw laptop specification data from a text file.
+- Connects to the OpenAI GPT API to structure the data into a standardized format.
+- Caches processed laptop specs to improve performance. (with in-memory map)
 - Exposes an API endpoint (`/process-laptop`) to process the laptop specification data.
 
 ## Project Structure
 
-- **`main.go`**: The entry point for the application, which initializes the API server.
+- **`main.go`**: The entry point for the application.
 - **`controllers/`**: Contains the `ProcessLaptopSpec` controller that handles reading and processing laptop specifications.
-- **`services/`**: Contains the logic for interacting with the OpenAI GPT API (`chatgpt_services.go`).
-- **`models/`**: Defines the `LaptopSpec` struct, which represents the structured laptop specifications.
-- **`input/`**: Contains the text file (`laptops_spec.txt`) with raw laptop specifications.
+- **`services/`**: Contains the logic for connecting to the OpenAI GPT API.
+- **`models/`**: Contains the `LaptopSpec` struct.
+- **`input/`**: Contains the text files (`laptops_spec.txt` and mock data for test) with raw laptop specifications.
 
 ## Requirements
 
@@ -26,8 +26,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/openai-laptop-specs.git
-   cd openai-laptop-specs
+   git clone https://github.com/baharoam/openaiIntegration.git
    ```
 
 2. Install dependencies:
@@ -35,8 +34,8 @@
    go mod tidy
    ```
 
-3. Set up your OpenAI API key:
-   Create a `.env` file in the project root and add your OpenAI API key:
+3. Set up  OpenAI API key:
+   Create a `.env` file in the project root and add OpenAI API key:
    ```bash
    OPENAI_API_KEY=your_openai_api_key
    ```
@@ -134,13 +133,6 @@ ok  	github.com/yourusername/openai-laptop-specs/controllers	0.022s
 ok  	github.com/yourusername/openai-laptop-specs/services	0.031s
 ```
 
-## Adding New Features
-
-If you want to extend the functionality or add new features:
-
-1. Add or modify routes in `main.go`.
-2. Update services or controllers as needed.
-3. Add test cases for new logic.
 
 ## Caching Behavior
 
