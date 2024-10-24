@@ -12,7 +12,7 @@
 - **`controllers/`**: Contains the `ProcessLaptopSpec` controller that handles reading and processing laptop specifications.
 - **`services/`**: Contains the logic for connecting to the OpenAI GPT API.
 - **`models/`**: Contains the `LaptopSpec` struct.
-- **`input/`**: Contains the text files (`laptops_spec.txt` and mock data for test) with raw laptop specifications.
+- **`input/`**: Contains the text files (`laptops_spec.txt`) with raw laptop specifications.
 
 ## Requirements
 
@@ -118,7 +118,7 @@ Unit tests are provided for the core functionality (e.g., reading files, process
 
 ### Running Tests
 
-1. Run the tests using the `go test` command:
+1. Run cd services and then Run the tests using the `go test` command:
    ```bash
    go test ./...
    ```
@@ -129,7 +129,6 @@ Unit tests are provided for the core functionality (e.g., reading files, process
 ### Example Test Output
 
 ```bash
-ok  	github.com/yourusername/openai-laptop-specs/controllers	0.022s
 ok  	github.com/yourusername/openai-laptop-specs/services	0.031s
 ```
 
