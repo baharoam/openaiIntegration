@@ -118,7 +118,7 @@ Unit tests are provided for the core functionality (e.g., reading files, process
 
 ### Running Tests
 
-1. Run the tests using the `go test` command:
+1. Run cd services and then Run the tests using the `go test` command:
    ```bash
    go test ./...
    ```
@@ -129,7 +129,6 @@ Unit tests are provided for the core functionality (e.g., reading files, process
 ### Example Test Output
 
 ```bash
-ok  	github.com/yourusername/openai-laptop-specs/controllers	0.022s
 ok  	github.com/yourusername/openai-laptop-specs/services	0.031s
 ```
 
