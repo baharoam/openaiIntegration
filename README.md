@@ -12,7 +12,7 @@
 - **`controllers/`**: Contains the `ProcessLaptopSpec` controller that handles reading and processing laptop specifications.
 - **`services/`**: Contains the logic for connecting to the OpenAI GPT API.
 - **`models/`**: Contains the `LaptopSpec` struct.
-- **`input/`**: Contains the text files (`laptops_spec.txt` and mock data for test) with raw laptop specifications.
+- **`input/`**: Contains the text files (`laptops_spec.txt`) with raw laptop specifications.
 
 ## Requirements
 
