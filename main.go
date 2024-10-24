@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/baharoam/openaiIntegration/controllers"
+	"github.com/baharoam/openaiIntegration/services"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	// "github.com/baharoam/openaiIntegration/controllers"
@@ -21,10 +22,11 @@ func loadEnv() {
 
 func main() {
 	loadEnv()
-	//api_key := os.Getenv("OPENAI_API_KEY")
 
 	r := gin.Default()
-	r.POST("/process-laptop", controllers.ProcessLaptopSpec)
+	r.POST("/process-laptop", func(c *gin.Context) {
+		controllers.ProcessLaptopSpec(c, services.CallChatGPT, "./input/laptops_spec.txt")
+	})
 	if err := r.Run(":8080"); err != nil {
 		log.Fatalf("Failed to run server: %v", err)
 	}
